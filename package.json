@@ -1,0 +1,52 @@
+{
+  "name": "gilbert-mcp",
+  "version": "1.0.0",
+  "description": "MCP server pour intégrer Gilbert (transcriptions et synthèses de réunions) dans Claude Desktop, Cursor, et tous les clients compatibles Model Context Protocol.",
+  "type": "module",
+  "bin": {
+    "gilbert-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "gilbert",
+    "transcription",
+    "claude",
+    "cursor",
+    "meeting",
+    "summary"
+  ],
+  "license": "MIT",
+  "author": "Lexia <contact@lexiapro.fr>",
+  "homepage": "https://gilbert-assistant.ovh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoF1234/Gilbert-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HugoF1234/Gilbert-mcp/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
