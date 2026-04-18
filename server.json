@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.hugof1234/gilbert-mcp",
+  "description": "Access your Gilbert meeting transcripts and summaries from Claude, Cursor, and other MCP-compatible clients. Search, list, and retrieve full transcripts in natural language.",
+  "repository": {
+    "url": "https://github.com/HugoF1234/Gilbert-mcp",
+    "source": "github"
+  },
+  "version": "1.0.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "gilbert-mcp",
+      "version": "1.0.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "GILBERT_API_KEY",
+          "description": "Your Gilbert API key (format: glbrt_live_...). Get one from your Gilbert admin dashboard with at least the meetings:read scope.",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "GILBERT_BASE_URL",
+          "description": "Gilbert API base URL. Defaults to the official hosted API; override only for self-hosted deployments.",
+          "isRequired": false,
+          "default": "https://gilbert-assistant.ovh/api/v1"
+        }
+      ]
+    }
+  ]
+}

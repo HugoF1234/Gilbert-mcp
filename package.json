@@ -1,6 +1,7 @@
 {
   "name": "gilbert-mcp",
-  "version": "1.0.0",
+  "mcpName": "io.github.hugof1234/gilbert-mcp",
+  "version": "1.0.1",
   "description": "MCP server pour intégrer Gilbert (transcriptions et synthèses de réunions) dans Claude Desktop, Cursor, et tous les clients compatibles Model Context Protocol.",
   "type": "module",
   "bin": {
