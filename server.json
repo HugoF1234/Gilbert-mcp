@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.hugof1234/gilbert-mcp",
-  "description": "Access your Gilbert meeting transcripts and summaries from Claude, Cursor, and other MCP-compatible clients. Search, list, and retrieve full transcripts in natural language.",
+  "name": "io.github.HugoF1234/gilbert-mcp",
+  "description": "Gilbert meetings: list, search, and fetch transcripts & summaries via MCP.",
   "repository": {
     "url": "https://github.com/HugoF1234/Gilbert-mcp",
     "source": "github"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "gilbert-mcp",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       },
