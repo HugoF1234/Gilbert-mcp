@@ -218,6 +218,37 @@ server.registerTool(
   async (args) => asTextResult(await gilbertFetch("/meetings/search", args)),
 );
 
+server.registerTool(
+  "list_folders",
+  {
+    title: "Lister les dossiers",
+    description:
+      "Lister les dossiers de l'utilisateur (nom + nombre de réunions). " +
+      "Sert à résoudre un dossier par son nom avant d'en résumer le contenu, " +
+      "ex: « résume mon dossier Kick-off » → list_folders puis get_folder_meetings. " +
+      "Les dossiers partagés ne sont inclus que si la clé porte le scope shared:read.",
+    inputSchema: {},
+    annotations: READ_ONLY,
+  },
+  async () => asTextResult(await gilbertFetch("/folders")),
+);
+
+server.registerTool(
+  "get_folder_meetings",
+  {
+    title: "Réunions d'un dossier",
+    description:
+      "Lister les réunions d'un dossier (et de ses sous-dossiers). " +
+      "À combiner avec get_summary/get_transcript pour résumer un dossier entier.",
+    inputSchema: {
+      folder_id: z.string().min(1).describe("UUID du dossier (obtenu via list_folders)"),
+    },
+    annotations: READ_ONLY,
+  },
+  async ({ folder_id }) =>
+    asTextResult(await gilbertFetch(`/folders/${encodeURIComponent(folder_id)}/meetings`)),
+);
+
 // ─── Démarrage ──────────────────────────────────────────────────────────────
 
 const transport = new StdioServerTransport();

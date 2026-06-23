@@ -16,6 +16,8 @@ const EXPECTED = [
   "get_transcript",
   "get_summary",
   "search_meetings",
+  "list_folders",
+  "get_folder_meetings",
 ];
 
 const transport = new StdioClientTransport({

@@ -114,6 +114,12 @@ Tous les tools sont **en lecture seule** (`readOnlyHint`).
 | `get_transcript` | Transcription texte seule |
 | `get_summary` | Synthèse markdown seule |
 | `search_meetings` | Recherche full-text |
+| `list_folders` | Liste les dossiers (nom + nombre de réunions) |
+| `get_folder_meetings` | Réunions d'un dossier (et sous-dossiers) |
+
+> Le contenu **partagé** avec l'utilisateur (réunions/dossiers d'autres personnes)
+> n'est accessible que si la clé API porte le scope `shared:read`. Par défaut, une
+> clé ne voit que le contenu de son propriétaire.
 
 ## Variables d'environnement
 
